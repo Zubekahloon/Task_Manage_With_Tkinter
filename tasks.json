@@ -1,0 +1,26 @@
+[
+    {
+        "title": "bs4",
+        "description": "hg thee ismsj",
+        "due_date": "2025-03-22",
+        "completed": true
+    },
+    {
+        "title": "web",
+        "description": "web web",
+        "due_date": "2025-03-22",
+        "completed": false
+    },
+    {
+        "title": "selenium",
+        "description": "selenium ihhgfffhfhf",
+        "due_date": "2025-03-22",
+        "completed": false
+    },
+    {
+        "title": "requests",
+        "description": "ywskjhhgh",
+        "due_date": "2025-03-23",
+        "completed": true
+    }
+]
