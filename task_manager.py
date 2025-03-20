@@ -21,7 +21,6 @@ class Task:
             "completed": self.completed
         }
 
-    @staticmethod
     def from_dict(task_dict):
         return Task(
             task_dict["title"],
@@ -86,7 +85,7 @@ class TaskApp:
         self.task_listbox = tk.Listbox(root, width=50, height=15)
         self.task_listbox.pack(pady=10)
 
-        tk.Button(root, text="Add Task", command=self.add_task_popup).pack(pady=5)
+        tk.Button(root, text="Add Task", command=self.add_tasks).pack(pady=5)
         tk.Button(root, text="Mark Completed", command=self.mark_completed).pack(pady=5)
         tk.Button(root, text="Delete Task", command=self.delete_task).pack(pady=5)
         tk.Button(root, text="Saved Tasks", command=self.download_tasks).pack(pady=5)
@@ -99,7 +98,7 @@ class TaskApp:
             status = "Complete" if task.completed else "Pending"
             self.task_listbox.insert(tk.END, f"{idx + 1}. {task.title} - {task.description} - {status} - {task.due_date}")
 
-    def add_task_popup(self):
+    def add_tasks(self):
         addtask = tk.Toplevel(self.root)
         addtask.title("Add Task")
         addtask.geometry("300x200")
@@ -126,7 +125,7 @@ class TaskApp:
                 self.load_tasks()
                 addtask.destroy()
             else:
-                messagebox.showwarning("Warning", "Title and Due Date are required!")
+                messagebox.showwarning("Bhai Enter Karo Task Ka Data")
 
         tk.Button(addtask, text="Add", command=submit).pack()
 
@@ -136,7 +135,7 @@ class TaskApp:
             self.manager.mark_task_completed(selected[0])
             self.load_tasks()
         else:
-            messagebox.showwarning("Warning", "Select a task to mark as completed!")
+            messagebox.showwarning("Select task to mark as completed!")
 
     def delete_task(self):
         selected = self.task_listbox.curselection()
@@ -144,7 +143,7 @@ class TaskApp:
             self.manager.delete_task(selected[0])
             self.load_tasks()
         else:
-            messagebox.showwarning("Warning", "Select a task to delete!")
+            messagebox.showwarning("Select task to delete!")
 
     def download_tasks(self):
         self.manager.download_tasks()
