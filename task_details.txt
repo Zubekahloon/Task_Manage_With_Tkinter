@@ -1,0 +1,11 @@
+I create 3 classes.
+
+1. First Class: class Task:
+   It is used for how to write/save user task date in file
+   And how to Append task data in json file
+
+2.Second Class: class TaskManager:
+   It is used for Task Manager all operation just like (Add task, Delete Task, Display All, Task, Save All Task)
+
+3. Third Class: class TaskApp:
+   It is used for Task Manager User Interface using Tkinter
